@@ -42,7 +42,7 @@ produits = [
     {"nom": "Montipora Grafted", "image": "montiporaGrafted.jpg"},
     {"nom": "Montipora RAH Hulk", "image": "montiporaHulk.jpg"},
     {"nom": "Montipora MH Star Wars", "image": "montiporaStarWars.jpg"},
-    {"nom": "Montipora RAH Beach Bum", "image": "montiporaBeachBum.jpg"},
+    {"nom": "Montipora RAH Beach Bum", "image": "montippraBeachBum.jpg"},
 
     # ==================== EUPHYLLIA ====================
     {"nom": "Euphyllia Parancora Gold", "image": "euphylliaParancoraGold.jpg"},
@@ -57,7 +57,7 @@ produits = [
     {"nom": "Zoanthus Fake Lime Chili", "image": "zoanthusFakeLimeChili.jpeg"},
     {"nom": "Zoanthus Miami Vice", "image": "zoanthusMiamiVice.jpeg"},
     {"nom": "Zoanthus Nirvana", "image": "zoanthusNirvana.jpeg"},
-    {"nom": "Zoanthus Oompalo Ompa", "image": "zoanthusOompalo0mpa.jpeg"},
+    {"nom": "Zoanthus Oompalo Ompa", "image": "zoanthusoompaloompa.jpeg"},
     {"nom": "Zoanthus Red Magician", "image": "zoanthusRedMagician.jpeg"},
     {"nom": "Zoanthus Seduction", "image": "zoanthusSeduction.jpeg"},
     {"nom": "Zoanthus Sonic Flair", "image": "zoanthusSonicFlair.jpeg"},
