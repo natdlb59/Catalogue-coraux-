@@ -1,361 +1,722 @@
-# Créé par natan, le 19/09/2026 en Python 3.7
 from flask import Flask, render_template_string, abort
-import qrcode
 import os
 
-app = Flask(__name__)
-
-
-# ==========================================================
+# ============================================================
 # CONFIGURATION
-# ==========================================================
+# ============================================================
 
-# Cette adresse sera remplacée par l'adresse de ton site
-# après l'hébergement.
-PUBLIC_URL = "https://TON-SITE.onrender.com"
+# Les photos sont directement à la racine de ton GitHub
+app = Flask(__name__, static_folder=".", static_url_path="")
 
-
-# ==========================================================
-# PRODUITS
-# ==========================================================
+# ============================================================
+# TES 22 CORAUX
+# ============================================================
 
 produits = [
-    {"id": 1, "nom": "Chalice Bugatti", "prix": 0.00, "description": "", "image": "/ChaliceBugatti.jpg"},
-    {"id": 2, "nom": "Montipora Fire Forest", "prix": 0.00, "description": "", "image": "/MontiporaFireForest.jpg"},
-    {"id": 3, "nom": "Acropora Horrida", "prix": 0.00, "description": "", "image": "/acroporaHorrida.jpg"},
-    {"id": 4, "nom": "Acropora Bill Murray", "prix": 0.00, "description": "", "image": "/acroporaBillMurray.jpg"},
-    {"id": 5, "nom": "Acropora Ghost Town", "prix": 0.00, "description": "", "image": "/acroporaGhostTown.jpg"},
-    {"id": 6, "nom": "Acropora Hacinthus", "prix": 0.00, "description": "", "image": "/acroporaHacinthus.jpg"},
-    {"id": 7, "nom": "Acropora Merlin", "prix": 0.00, "description": "", "image": "/acroporaMerlin.jpg"},
-    {"id": 8, "nom": "Acropora Microcla-Dos Rose", "prix": 0.00, "description": "", "image": "/acroporaMicrocla-DosRose.jpg"},
-    {"id": 9, "nom": "Acropora Nana Tricolor", "prix": 0.00, "description": "", "image": "/acroporaNanaTricolor.jpg"},
-    {"id": 10, "nom": "Acropora Purple Haze", "prix": 0.00, "description": "", "image": "/acroporaPurpleHaze.png"},
-    {"id": 11, "nom": "Acropora Tenuis", "prix": 0.00, "description": "", "image": "/acroporaTenuis.jpg"},
-    {"id": 12, "nom": "Acropora Wicked Orchid", "prix": 0.00, "description": "", "image": "/acroporaWickedOrchid.jpg"},
-    {"id": 13, "nom": "Anacropora", "prix": 0.00, "description": "", "image": "/anacropora.jpg"},
-    {"id": 14, "nom": "Anacropora Goldenrod", "prix": 0.00, "description": "", "image": "/anacroporaGoldenrod.jpg"},
-    {"id": 15, "nom": "Anacropora Tropicana", "prix": 0.00, "description": "", "image": "/anacroporaTropicana.jpg"},
-    {"id": 16, "nom": "Euphyllia Parancora Gold", "prix": 0.00, "description": "", "image": "/euphylliaParancoraGold.jpg"},
-    {"id": 17, "nom": "Euphyllia Parancora Rainbow Hologramme", "prix": 0.00, "description": "", "image": "/euphylliaParancoraRainbowHologramme.jpg"},
-    {"id": 18, "nom": "Montipora Chili Pepper", "prix": 0.00, "description": "", "image": "/montiporaChiliPepper.jpg"},
-    {"id": 19, "nom": "Montipora Grafted", "prix": 0.00, "description": "", "image": "/montiporaGrafted.jpg"},
-    {"id": 20, "nom": "Montipora Hulk", "prix": 0.00, "description": "", "image": "/montiporaHulk.jpg"},
-    {"id": 21, "nom": "Montipora Star Wars", "prix": 0.00, "description": "", "image": "/montiporaStarWars.jpg"},
-    {"id": 22, "nom": "Montipora Beach Bum", "prix": 0.00, "description": "", "image": "/montippraBeachBum.jpg"}
+
+    {
+        "id": 1,
+        "nom": "Chalice Bugatti",
+        "prix": 0.00,
+        "description": "",
+        "image": "/ChaliceBugatti.jpg"
+    },
+
+    {
+        "id": 2,
+        "nom": "Montipora Fire Forest",
+        "prix": 0.00,
+        "description": "",
+        "image": "/MontiporaFireForest.jpg"
+    },
+
+    {
+        "id": 3,
+        "nom": "Acropora Horrida",
+        "prix": 0.00,
+        "description": "",
+        "image": "/acroporaHorrida.jpg"
+    },
+
+    {
+        "id": 4,
+        "nom": "Acropora Bill Murray",
+        "prix": 0.00,
+        "description": "",
+        "image": "/acroporaBillMurray.jpg"
+    },
+
+    {
+        "id": 5,
+        "nom": "Acropora Ghost Town",
+        "prix": 0.00,
+        "description": "",
+        "image": "/acroporaGhostTown.jpg"
+    },
+
+    {
+        "id": 6,
+        "nom": "Acropora Hacinthus",
+        "prix": 0.00,
+        "description": "",
+        "image": "/acroporaHacinthus.jpg"
+    },
+
+    {
+        "id": 7,
+        "nom": "Acropora Merlin",
+        "prix": 0.00,
+        "description": "",
+        "image": "/acroporaMerlin.jpg"
+    },
+
+    {
+        "id": 8,
+        "nom": "Acropora Microcla-Dos Rose",
+        "prix": 0.00,
+        "description": "",
+        "image": "/acroporaMicrocla-DosRose.jpg"
+    },
+
+    {
+        "id": 9,
+        "nom": "Acropora Nana Tricolor",
+        "prix": 0.00,
+        "description": "",
+        "image": "/acroporaNanaTricolor.jpg"
+    },
+
+    {
+        "id": 10,
+        "nom": "Acropora Purple Haze",
+        "prix": 0.00,
+        "description": "",
+        "image": "/acroporaPurpleHaze.png"
+    },
+
+    {
+        "id": 11,
+        "nom": "Acropora Tenuis",
+        "prix": 0.00,
+        "description": "",
+        "image": "/acroporaTenuis.jpg"
+    },
+
+    {
+        "id": 12,
+        "nom": "Acropora Wicked Orchid",
+        "prix": 0.00,
+        "description": "",
+        "image": "/acroporaWickedOrchid.jpg"
+    },
+
+    {
+        "id": 13,
+        "nom": "Anacropora",
+        "prix": 0.00,
+        "description": "",
+        "image": "/anacropora.jpg"
+    },
+
+    {
+        "id": 14,
+        "nom": "Anacropora Goldenrod",
+        "prix": 0.00,
+        "description": "",
+        "image": "/anacroporaGoldenrod.jpg"
+    },
+
+    {
+        "id": 15,
+        "nom": "Anacropora Tropicana",
+        "prix": 0.00,
+        "description": "",
+        "image": "/anacroporaTropicana.jpg"
+    },
+
+    {
+        "id": 16,
+        "nom": "Euphyllia Parancora Gold",
+        "prix": 0.00,
+        "description": "",
+        "image": "/euphylliaParancoraGold.jpg"
+    },
+
+    {
+        "id": 17,
+        "nom": "Euphyllia Parancora Rainbow Hologramme",
+        "prix": 0.00,
+        "description": "",
+        "image": "/euphylliaParancoraRainbowHologramme.jpg"
+    },
+
+    {
+        "id": 18,
+        "nom": "Montipora Chili Pepper",
+        "prix": 0.00,
+        "description": "",
+        "image": "/montiporaChiliPepper.jpg"
+    },
+
+    {
+        "id": 19,
+        "nom": "Montipora Grafted",
+        "prix": 0.00,
+        "description": "",
+        "image": "/montiporaGrafted.jpg"
+    },
+
+    {
+        "id": 20,
+        "nom": "Montipora Hulk",
+        "prix": 0.00,
+        "description": "",
+        "image": "/montiporaHulk.jpg"
+    },
+
+    {
+        "id": 21,
+        "nom": "Montipora Star Wars",
+        "prix": 0.00,
+        "description": "",
+        "image": "/montiporaStarWars.jpg"
+    },
+
+    {
+        "id": 22,
+        "nom": "Montipora Beach Bum",
+        "prix": 0.00,
+        "description": "",
+        "image": "/montippraBeachBum.jpg"
+    }
+
 ]
 
-# ==========================================================
-# PAGE PRINCIPALE
-# ==========================================================
 
-PAGE_ACCUEIL = """
+# ============================================================
+# DESIGN DU SITE
+# ============================================================
 
+HTML = """
 <!DOCTYPE html>
 
 <html lang="fr">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>Mon Catalogue</title>
+    <title>Catalogue de Coraux</title>
 
+    <style>
 
-<style>
+        * {
+            box-sizing: border-box;
+        }
 
-/* ------------------------------ */
-/* GENERAL */
-/* ------------------------------ */
 
-* {
-    box-sizing: border-box;
-}
+        /* ================================
+           FOND DU SITE
+        ================================= */
 
-body {
+        body {
 
-    margin: 0;
+            margin: 0;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
-    background: #f5f6f8;
+            color: #ffffff;
 
-    color: #171717;
-}
+            background:
 
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(0, 190, 220, 0.25),
+                    transparent 30%
+                ),
 
-/* ------------------------------ */
-/* HEADER */
-/* ------------------------------ */
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(0, 120, 180, 0.25),
+                    transparent 35%
+                ),
 
-header {
+                linear-gradient(
+                    135deg,
+                    #031b2b,
+                    #063b52,
+                    #02131f
+                );
 
-    background:
-        linear-gradient(
-            135deg,
-            #111827,
-            #26364d
-        );
+            min-height: 100vh;
 
-    color: white;
+        }
 
-    text-align: center;
 
-    padding: 55px 20px;
-}
+        /* ================================
+           HEADER
+        ================================= */
 
+        .hero {
 
-header h1 {
+            text-align: center;
 
-    margin: 0;
+            padding:
+                70px
+                20px
+                60px;
 
-    font-size: 42px;
-}
+            background:
 
+                linear-gradient(
+                    rgba(0, 30, 45, 0.45),
+                    rgba(0, 20, 35, 0.75)
+                );
 
-header p {
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.12);
 
-    margin-top: 12px;
+            position: relative;
 
-    font-size: 18px;
+            overflow: hidden;
 
-    color: #d7dce5;
-}
+        }
 
 
-/* ------------------------------ */
-/* CONTENEUR */
-/* ------------------------------ */
+        .hero::before {
 
-.container {
+            content: "";
 
-    max-width: 1100px;
+            position: absolute;
 
-    margin: auto;
+            width: 500px;
+            height: 500px;
 
-    padding: 30px 20px 60px;
-}
+            background:
+                rgba(0, 210, 255, 0.10);
 
+            border-radius: 50%;
 
-/* ------------------------------ */
-/* QR CODE */
-/* ------------------------------ */
+            top: -300px;
+            left: -100px;
 
-.qr-box {
+            filter: blur(20px);
 
-    background: white;
+        }
 
-    border-radius: 20px;
 
-    padding: 25px;
+        .hero::after {
 
-    text-align: center;
+            content: "";
 
-    margin-bottom: 35px;
+            position: absolute;
 
-    box-shadow:
-        0 8px 30px rgba(0,0,0,0.07);
-}
+            width: 400px;
+            height: 400px;
 
+            background:
+                rgba(0, 120, 255, 0.10);
 
-.qr-box h2 {
+            border-radius: 50%;
 
-    margin-top: 0;
-}
+            bottom: -250px;
+            right: -100px;
 
+            filter: blur(20px);
 
-.qr-box img {
+        }
 
-    width: 180px;
 
-    max-width: 70%;
+        .hero-content {
 
-    margin-top: 10px;
-}
+            position: relative;
 
+            z-index: 2;
 
-/* ------------------------------ */
-/* PRODUITS */
-/* ------------------------------ */
+            max-width: 900px;
 
-.produits {
+            margin: auto;
 
-    display: grid;
+        }
 
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(250px, 1fr)
-        );
 
-    gap: 25px;
-}
+        .coral-icon {
 
+            font-size: 48px;
 
-/* ------------------------------ */
-/* CARTE */
-/* ------------------------------ */
+            margin-bottom: 15px;
 
-.produit {
+        }
 
-    background: white;
 
-    border-radius: 20px;
+        .hero h1 {
 
-    overflow: hidden;
+            margin: 0;
 
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.08);
+            font-size: clamp(42px, 7vw, 76px);
 
-    transition:
-        transform 0.2s,
-        box-shadow 0.2s;
-}
+            font-weight: 800;
 
+            letter-spacing: -2px;
 
-.produit:hover {
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #71e5ff,
+                    #ffffff
+                );
 
-    transform: translateY(-5px);
+            -webkit-background-clip: text;
 
-    box-shadow:
-        0 15px 35px rgba(0,0,0,0.12);
-}
+            -webkit-text-fill-color: transparent;
 
+        }
 
-.produit img {
 
-    width: 100%;
+        .hero p {
 
-    height: 240px;
+            margin-top: 18px;
 
-    object-fit: cover;
+            font-size: 20px;
 
-    display: block;
-}
+            color: #c9edf5;
 
+            letter-spacing: 0.5px;
 
-/* ------------------------------ */
-/* INFORMATIONS */
-/* ------------------------------ */
+        }
 
-.infos {
 
-    padding: 22px;
-}
+        /* ================================
+           CONTENU
+        ================================= */
 
+        .container {
 
-.infos h2 {
+            max-width: 1250px;
 
-    margin: 0 0 10px;
+            margin: auto;
 
-    font-size: 22px;
-}
+            padding:
+                50px
+                20px
+                80px;
 
+        }
 
-.description {
 
-    color: #6b7280;
+        .section-title {
 
-    line-height: 1.5;
+            text-align: center;
 
-    min-height: 45px;
-}
+            margin-bottom: 40px;
 
+        }
 
-.prix {
 
-    font-size: 26px;
+        .section-title h2 {
 
-    font-weight: bold;
+            font-size: 32px;
 
-    margin:
-        20px 0;
-}
+            margin: 0;
 
+        }
 
-/* ------------------------------ */
-/* BOUTON */
-/* ------------------------------ */
 
-.bouton {
+        .section-title p {
 
-    display: block;
+            color: #a8d4df;
 
-    text-align: center;
+            margin-top: 10px;
 
-    text-decoration: none;
+        }
 
-    background: #111827;
 
-    color: white;
+        /* ================================
+           GRILLE
+        ================================= */
 
-    padding: 14px;
+        .grid {
 
-    border-radius: 12px;
+            display: grid;
 
-    font-weight: bold;
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(260px, 1fr)
+                );
 
-    transition:
-        background 0.2s;
-}
+            gap: 28px;
 
+        }
 
-.bouton:hover {
 
-    background: #374151;
-}
+        /* ================================
+           CARTE
+        ================================= */
 
+        .card {
 
-/* ------------------------------ */
-/* FOOTER */
-/* ------------------------------ */
+            background:
+                rgba(255,255,255,0.075);
 
-footer {
+            border:
+                1px solid
+                rgba(255,255,255,0.13);
 
-    text-align: center;
+            border-radius: 22px;
 
-    color: #777;
+            overflow: hidden;
 
-    padding: 30px;
+            backdrop-filter: blur(12px);
 
-    font-size: 14px;
-}
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.25);
 
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
 
-/* ------------------------------ */
-/* TELEPHONE */
-/* ------------------------------ */
+        }
 
-@media (max-width: 600px) {
 
-    header {
+        .card:hover {
 
-        padding: 45px 20px;
-    }
+            transform:
+                translateY(-8px);
 
-    header h1 {
+            box-shadow:
+                0 25px 55px
+                rgba(0,0,0,0.4);
 
-        font-size: 32px;
-    }
+        }
 
-    .container {
 
-        padding:
-            20px 15px 45px;
-    }
+        /* ================================
+           IMAGE
+        ================================= */
 
-    .produit img {
+        .image-container {
 
-        height: 220px;
-    }
-}
+            width: 100%;
 
-</style>
+            height: 270px;
+
+            overflow: hidden;
+
+            background: #061b27;
+
+        }
+
+
+        .image-container img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.4s ease;
+
+        }
+
+
+        .card:hover
+        .image-container img {
+
+            transform: scale(1.06);
+
+        }
+
+
+        /* ================================
+           INFOS
+        ================================= */
+
+        .card-content {
+
+            padding: 22px;
+
+        }
+
+
+        .card h3 {
+
+            margin:
+                0
+                0
+                12px;
+
+            font-size: 22px;
+
+            color: #ffffff;
+
+        }
+
+
+        .description {
+
+            min-height: 20px;
+
+            color: #a9cbd4;
+
+            font-size: 14px;
+
+        }
+
+
+        .bottom {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-top: 22px;
+
+        }
+
+
+        .price {
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            color: #65e6ff;
+
+        }
+
+
+        .button {
+
+            display: inline-block;
+
+            padding:
+                10px
+                16px;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00a8cc,
+                    #007ea3
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            transition:
+                transform 0.2s ease,
+                opacity 0.2s ease;
+
+        }
+
+
+        .button:hover {
+
+            transform:
+                translateY(-2px);
+
+            opacity: 0.9;
+
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            color: #8eb8c4;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            font-size: 14px;
+
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media
+        (max-width: 600px) {
+
+            .hero {
+
+                padding:
+                    55px
+                    15px
+                    45px;
+
+            }
+
+            .hero h1 {
+
+                letter-spacing:
+                    -1px;
+
+            }
+
+            .hero p {
+
+                font-size: 16px;
+
+            }
+
+            .container {
+
+                padding:
+                    35px
+                    15px
+                    60px;
+
+            }
+
+            .grid {
+
+                gap: 20px;
+
+            }
+
+            .image-container {
+
+                height: 250px;
+
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -363,364 +724,358 @@ footer {
 <body>
 
 
-<header>
+    <!-- ================================
+         HEADER
+    ================================= -->
 
-    <h1>Mon Catalogue</h1>
+    <header class="hero">
 
-    <p>
-        Découvrez nos produits
-    </p>
+        <div class="hero-content">
 
-</header>
+            <div class="coral-icon">
+                🪸
+            </div>
 
+            <h1>
+                Catalogue de Coraux
+            </h1>
 
-<div class="container">
+            <p>
+                Découvrez notre sélection de coraux
+            </p>
 
+        </div>
 
-    <!-- QR CODE -->
-
-    <div class="qr-box">
-
-        <h2>
-            📱 Scannez pour accéder au catalogue
-        </h2>
-
-        <p>
-            Scannez ce QR code avec votre téléphone.
-        </p>
-
-        <img
-            src="/static/qrcode/catalogue.png"
-            alt="QR Code"
-        >
-
-    </div>
+    </header>
 
 
-    <!-- PRODUITS -->
+    <!-- ================================
+         PRODUITS
+    ================================= -->
 
-    <div class="produits">
+    <main class="container">
 
-        {% for produit in produits %}
+        <div class="section-title">
 
-        <div class="produit">
+            <h2>
+                Nos coraux
+            </h2>
 
-            <img
-                src="{{ produit.image }}"
-                alt="{{ produit.nom }}"
-            >
+            <p>
+                Explorez notre catalogue
+            </p>
 
-            <div class="infos">
+        </div>
 
-                <h2>
-                    {{ produit.nom }}
-                </h2>
 
-                <p class="description">
-                    {{ produit.description }}
-                </p>
+        <div class="grid">
 
-                <div class="prix">
+            {% for produit in produits %}
 
-                    {{ "%.2f"|format(produit.prix) }} €
+            <div class="card">
+
+                <div class="image-container">
+
+                    <img
+                        src="{{ produit.image }}"
+                        alt="{{ produit.nom }}"
+                        onerror="this.style.display='none';"
+                    >
 
                 </div>
 
-                <a
-                    class="bouton"
-                    href="/produit/{{ produit.id }}"
-                >
-                    Voir le produit →
-                </a>
+
+                <div class="card-content">
+
+                    <h3>
+                        {{ produit.nom }}
+                    </h3>
+
+
+                    {% if produit.description %}
+
+                    <div class="description">
+                        {{ produit.description }}
+                    </div>
+
+                    {% endif %}
+
+
+                    <div class="bottom">
+
+                        <div class="price">
+
+                            {{ "%.2f"|format(produit.prix) }} €
+
+                        </div>
+
+
+                        <a
+                            class="button"
+                            href="/produit/{{ produit.id }}"
+                        >
+                            Voir
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
 
+            {% endfor %}
+
         </div>
 
-        {% endfor %}
-
-    </div>
+    </main>
 
 
-</div>
+    <!-- ================================
+         FOOTER
+    ================================= -->
 
+    <footer>
 
-<footer>
+        Catalogue de Coraux
 
-    © 2026 — Mon Catalogue
-
-</footer>
+    </footer>
 
 
 </body>
 
 </html>
-
 """
 
 
-# ==========================================================
-# PAGE D'UN PRODUIT
-# ==========================================================
-
-PAGE_PRODUIT = """
-
-<!DOCTYPE html>
-
-<html lang="fr">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>{{ produit.nom }}</title>
-
-
-<style>
-
-body {
-
-    margin: 0;
-
-    font-family: Arial, sans-serif;
-
-    background: #f5f6f8;
-}
-
-
-.container {
-
-    max-width: 700px;
-
-    margin: 40px auto;
-
-    padding: 20px;
-}
-
-
-.carte {
-
-    background: white;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 10px 35px rgba(0,0,0,0.1);
-}
-
-
-.carte img {
-
-    width: 100%;
-
-    max-height: 450px;
-
-    object-fit: cover;
-}
-
-
-.infos {
-
-    padding: 30px;
-}
-
-
-h1 {
-
-    margin-top: 0;
-
-    font-size: 32px;
-}
-
-
-.description {
-
-    color: #666;
-
-    line-height: 1.6;
-}
-
-
-.prix {
-
-    font-size: 30px;
-
-    font-weight: bold;
-
-    margin: 25px 0;
-}
-
-
-.retour {
-
-    display: inline-block;
-
-    padding: 13px 20px;
-
-    background: #111827;
-
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 12px;
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<div class="container">
-
-    <div class="carte">
-
-        <img
-            src="{{ produit.image }}"
-            alt="{{ produit.nom }}"
-        >
-
-        <div class="infos">
-
-            <h1>
-                {{ produit.nom }}
-            </h1>
-
-            <p class="description">
-                {{ produit.description }}
-            </p>
-
-            <div class="prix">
-
-                {{ "%.2f"|format(produit.prix) }} €
-
-            </div>
-
-            <a
-                class="retour"
-                href="/"
-            >
-                ← Retour au catalogue
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-</body>
-
-</html>
-
-"""
-
-
-# ==========================================================
-# ROUTES
-# ==========================================================
+# ============================================================
+# PAGE PRINCIPALE
+# ============================================================
 
 @app.route("/")
 def accueil():
 
     return render_template_string(
-        PAGE_ACCUEIL,
+        HTML,
         produits=produits
     )
 
 
-@app.route("/produit/<int:id>")
-def afficher_produit(id):
+# ============================================================
+# PAGE D'UN CORAIL
+# ============================================================
+
+@app.route("/produit/<int:produit_id>")
+def produit_detail(produit_id):
 
     produit = next(
         (
             p for p in produits
-            if p["id"] == id
+            if p["id"] == produit_id
         ),
         None
     )
 
     if produit is None:
-
         abort(404)
 
+    HTML_DETAIL = """
+    <!DOCTYPE html>
+
+    <html lang="fr">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+
+        <title>{{ produit.nom }}</title>
+
+        <style>
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+
+                margin: 0;
+
+                font-family: Arial, sans-serif;
+
+                color: white;
+
+                background:
+                    linear-gradient(
+                        135deg,
+                        #031b2b,
+                        #063b52,
+                        #02131f
+                    );
+
+                min-height: 100vh;
+
+                padding: 30px 20px;
+
+            }
+
+            .page {
+
+                max-width: 900px;
+
+                margin: auto;
+
+            }
+
+            .back {
+
+                display: inline-block;
+
+                margin-bottom: 25px;
+
+                color: #8feaff;
+
+                text-decoration: none;
+
+                font-weight: bold;
+
+            }
+
+            .card {
+
+                background:
+                    rgba(255,255,255,0.08);
+
+                border:
+                    1px solid
+                    rgba(255,255,255,0.15);
+
+                border-radius: 25px;
+
+                overflow: hidden;
+
+                backdrop-filter: blur(12px);
+
+                box-shadow:
+                    0 20px 60px
+                    rgba(0,0,0,0.35);
+
+            }
+
+            .image {
+
+                width: 100%;
+
+                max-height: 600px;
+
+                object-fit: cover;
+
+                display: block;
+
+            }
+
+            .content {
+
+                padding: 30px;
+
+            }
+
+            h1 {
+
+                margin-top: 0;
+
+                font-size: 38px;
+
+            }
+
+            .price {
+
+                color: #65e6ff;
+
+                font-size: 28px;
+
+                font-weight: bold;
+
+                margin-top: 20px;
+
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="page">
+
+            <a
+                href="/"
+                class="back"
+            >
+                ← Retour au catalogue
+            </a>
+
+            <div class="card">
+
+                <img
+                    src="{{ produit.image }}"
+                    class="image"
+                    alt="{{ produit.nom }}"
+                >
+
+                <div class="content">
+
+                    <h1>
+                        {{ produit.nom }}
+                    </h1>
+
+                    {% if produit.description %}
+
+                    <p>
+                        {{ produit.description }}
+                    </p>
+
+                    {% endif %}
+
+                    <div class="price">
+
+                        {{ "%.2f"|format(produit.prix) }} €
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+    </html>
+    """
+
     return render_template_string(
-        PAGE_PRODUIT,
+        HTML_DETAIL,
         produit=produit
     )
 
 
-# ==========================================================
-# QR CODE
-# ==========================================================
-
-def generer_qr_code():
-
-    os.makedirs(
-        "static/qrcode",
-        exist_ok=True
-    )
-
-    qr = qrcode.QRCode(
-
-        version=None,
-
-        error_correction=
-            qrcode.constants.ERROR_CORRECT_H,
-
-        box_size=10,
-
-        border=4
-
-    )
-
-    qr.add_data(
-        PUBLIC_URL
-    )
-
-    qr.make(
-        fit=True
-    )
-
-    image = qr.make_image()
-
-    image.save(
-        "static/qrcode/catalogue.png"
-    )
-
-    print()
-    print("QR CODE CREE !")
-    print()
-    print(
-        "Adresse :",
-        PUBLIC_URL
-    )
-    print()
-    print(
-        "Fichier :",
-        "static/qrcode/catalogue.png"
-    )
-
-
-# ==========================================================
-# LANCEMENT
-# ==========================================================
+# ============================================================
+# LANCEMENT LOCAL
+# ============================================================
 
 if __name__ == "__main__":
 
-    generer_qr_code()
+    port = int(
+        os.environ.get(
+            "PORT",
+            5000
+        )
+    )
 
     app.run(
         host="0.0.0.0",
-        port=5000,
+        port=port,
         debug=True
     )
