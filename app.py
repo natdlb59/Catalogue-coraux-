@@ -26,10 +26,10 @@ produits = [
     {"nom": "Acropora Pikachu", "image": "acroporaPurpleHaze.png"},
     {"nom": "Acropora Tenuis", "image": "acroporaTenuis.jpg"},
     {"nom": "Acropora MH Wicked Orchid", "image": "acroporaWickedOrchid.jpg"},
-    {"nom": "Acropora MH Little Rainbow", "image": "acroporaMhlittleRaimbow.jpg"},
-    {"nom": "Acropora RAH Ghost Town", "image": "acroporaRahGhostTown.jpg"},
-    {"nom": "Acropora RAH Purple Haze", "image": "acroporaRahPurpleHaze.jpg"},
-    {"nom": "Acropora RAH Raimbow Mango", "image": "acroporaRahRaimbowMango.jpg"},
+    {"nom": "Acropora MH Little Rainbow", "image": "acroporaMhilittleRaimbow.jpeg"},
+    {"nom": "Acropora RAH Ghost Town", "image": "acroporaRahGhostTown.jpeg"},
+    {"nom": "Acropora RAH Purple Haze", "image": "acroporaRahPurpleHaze.jpeg"},
+    {"nom": "Acropora RAH Raimbow Mango", "image": "acroporaRahRaimbowMango.jpeg"},
 
     # ==================== ANACROPORA ====================
     {"nom": "Anacropora JF TNT", "image": "anacropora.jpg"},
@@ -42,33 +42,33 @@ produits = [
     {"nom": "Montipora Grafted", "image": "montiporaGrafted.jpg"},
     {"nom": "Montipora RAH Hulk", "image": "montiporaHulk.jpg"},
     {"nom": "Montipora MH Star Wars", "image": "montiporaStarWars.jpg"},
-    {"nom": "Montipora RAH Beach Bum", "image": "montippraBeachBum.jpg"},
+    {"nom": "Montipora RAH Beach Bum", "image": "montiporaBeachBum.jpg"},
 
     # ==================== EUPHYLLIA ====================
     {"nom": "Euphyllia Parancora Gold", "image": "euphylliaParancoraGold.jpg"},
     {"nom": "Euphyllia Parancora Raimbow Holograme", "image": "euphylliaParancoraRainbowHologramme.jpg"},
 
     # ==================== ZOANTHUS ====================
-    {"nom": "Zoanthus Armagedon", "image": "zoanthusArmagedon.jpg"},
-    {"nom": "Zoanthus Bam Bam", "image": "zoanthusBambam.jpg"},
-    {"nom": "Zoanthus Captain America", "image": "zoanthusCaptainAmerica.jpg"},
-    {"nom": "Zoanthus Eyes Of RAH", "image": "zoanthusEyesOfRah.jpg"},
-    {"nom": "Zoanthus Fairy Muncher", "image": "zoanthusFairyMuncher.jpg"},
-    {"nom": "Zoanthus Fake Lime Chili", "image": "zoanthusFakeLimeChili.jpg"},
-    {"nom": "Zoanthus Miami Vice", "image": "zoanthusMiamiVice.jpg"},
-    {"nom": "Zoanthus Nirvana", "image": "zoanthusNirvana.jpg"},
-    {"nom": "Zoanthus Oompalo Ompa", "image": "zoanthusOompalo0mpa.jpg"},
-    {"nom": "Zoanthus Red Magician", "image": "zoanthusRedMagician.jpg"},
-    {"nom": "Zoanthus Seduction", "image": "zoanthusSeduction.jpg"},
-    {"nom": "Zoanthus Sonic Flair", "image": "zoanthusSonicFlair.jpg"},
-    {"nom": "Zoanthus Stratosphere", "image": "zoanthusStratosphere.jpg"},
-    {"nom": "Zoanthus Sunyday", "image": "zoanthusSunyday.jpg"},
-    {"nom": "Zoanthus Utter Chaos", "image": "zoanthusUtterChaos.jpg"},
+    {"nom": "Zoanthus Armagedon", "image": "zoanthusArmagedon.jpeg"},
+    {"nom": "Zoanthus Bam Bam", "image": "zoanthusBambam.jpeg"},
+    {"nom": "Zoanthus Captain America", "image": "zoanthusCaptainAmerica.jpeg"},
+    {"nom": "Zoanthus Eyes Of RAH", "image": "zoanthusEyesOfRah.jpeg"},
+    {"nom": "Zoanthus Fairy Muncher", "image": "zoanthusFairyMuncher.jpeg"},
+    {"nom": "Zoanthus Fake Lime Chili", "image": "zoanthusFakeLimeChili.jpeg"},
+    {"nom": "Zoanthus Miami Vice", "image": "zoanthusMiamiVice.jpeg"},
+    {"nom": "Zoanthus Nirvana", "image": "zoanthusNirvana.jpeg"},
+    {"nom": "Zoanthus Oompalo Ompa", "image": "zoanthusOompalo0mpa.jpeg"},
+    {"nom": "Zoanthus Red Magician", "image": "zoanthusRedMagician.jpeg"},
+    {"nom": "Zoanthus Seduction", "image": "zoanthusSeduction.jpeg"},
+    {"nom": "Zoanthus Sonic Flair", "image": "zoanthusSonicFlair.jpeg"},
+    {"nom": "Zoanthus Stratosphere", "image": "zoanthusStratosphere.jpeg"},
+    {"nom": "Zoanthus Sunyday", "image": "zoanthusSunyday.jpeg"},
+    {"nom": "Zoanthus Utter Chaos", "image": "zoanthusUtterChaos.jpeg"},
 
     # ==================== AUTRES ====================
     {"nom": "Chalice Bugatti", "image": "ChaliceBugatti.jpg"},
-    {"nom": "Clavularia Tri Color", "image": "ClavulariaTriColor.jpg"},
-    {"nom": "Sarcophyton Fidji Vert Long Polypes", "image": "sarcophytonFidjiVertongPolipes.jpg"},
+    {"nom": "Clavularia Tri Color", "image": "ClavulariaTriColor.jpeg"},
+    {"nom": "Sarcophyton Fidji Vert Long Polypes", "image": "sarcophytonFidjiVertongPolipes.jpeg"},
 ]
 # ============================================================
 # PAGE PRINCIPALE
