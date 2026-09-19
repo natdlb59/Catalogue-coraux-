@@ -17,7 +17,7 @@ produits = [
     {
         "id": 1,
         "nom": "Chalice Bugatti",
-        "prix": 15.00,
+        "prix": 60-120,
         "description": "",
         "image": "/ChaliceBugatti.jpg"
     },
@@ -25,55 +25,55 @@ produits = [
     {
         "id": 2,
         "nom": "Montipora Fire Forest",
-        "prix": 0.00,
+        "prix": 15,
         "description": "",
         "image": "/MontiporaFireForest.jpg"
     },
 
     {
         "id": 3,
-        "nom": "Acropora Horrida",
-        "prix": 0.00,
+        "nom": "Acropora MH Horrida",
+        "prix": 15.00,
         "description": "",
         "image": "/accroporaHorrida.jpg"
     },
 
     {
         "id": 4,
-        "nom": "Acropora Bill Murray",
-        "prix": 0.00,
+        "nom": "Acropora AK Bill Murray",
+        "prix": 80.00,
         "description": "",
         "image": "/acroporaBillMurray.jpg"
     },
 
     {
         "id": 5,
-        "nom": "Acropora Ghost Town",
-        "prix": 0.00,
+        "nom": "Acropora RAH Ghost Town",
+        "prix": 25.00,
         "description": "",
         "image": "/acroporaGhostTown.jpg"
     },
 
     {
         "id": 6,
-        "nom": "Acropora Hacinthus",
-        "prix": 0.00,
+        "nom": "Acropora RH Hacinthus",
+        "prix": 25.00,
         "description": "",
         "image": "/acroporaHaycinthus.jpg"
     },
 
     {
         "id": 7,
-        "nom": "Acropora Merlin",
-        "prix": 0.00,
+        "nom": "Acropora RAH Merlin'staff",
+        "prix": 30.00,
         "description": "",
         "image": "/acroporaMerlin.jpg"
     },
 
     {
         "id": 8,
-        "nom": "Acropora Microcla-Dos Rose",
-        "prix": 0.00,
+        "nom": "Acropora MicroclaDos Rose",
+        "prix": 20.00-25.00,
         "description": "",
         "image": "/acroporaMicrocla-DosRose.jpg"
     },
@@ -81,15 +81,15 @@ produits = [
     {
         "id": 9,
         "nom": "Acropora Nana Tricolor",
-        "prix": 0.00,
+        "prix": 15.00-20.00,
         "description": "",
         "image": "/acroporaNanaTricolor.jpg"
     },
 
     {
         "id": 10,
-        "nom": "Acropora Purple Haze",
-        "prix": 0.00,
+        "nom": "Acropora RAH Purple Haze",
+        "prix": 15.00,
         "description": "",
         "image": "/acroporaPurpleHaze.png"
     },
@@ -97,39 +97,39 @@ produits = [
     {
         "id": 11,
         "nom": "Acropora Tenuis",
-        "prix": 0.00,
+        "prix": 25.00,
         "description": "",
         "image": "/acroporaTenuis.jpg"
     },
 
     {
         "id": 12,
-        "nom": "Acropora Wicked Orchid",
-        "prix": 0.00,
+        "nom": "Acropora MH Wicked Orchid",
+        "prix": 15.00,
         "description": "",
         "image": "/acroporaWickedOrchid.jpg"
     },
 
     {
         "id": 13,
-        "nom": "Anacropora",
-        "prix": 0.00,
+        "nom": "Anacropora JF TNT",
+        "prix": 40.00,
         "description": "",
         "image": "/anacropora.jpg"
     },
 
     {
         "id": 14,
-        "nom": "Anacropora Goldenrod",
-        "prix": 0.00,
+        "nom": "Anacropora AK Goldenrod",
+        "prix": 25.00,
         "description": "",
         "image": "/anacroporaGoldenrod.jpg"
     },
 
     {
         "id": 15,
-        "nom": "Anacropora Tropicana",
-        "prix": 0.00,
+        "nom": "Anacropora JF Tropicana",
+        "prix": 40.00,
         "description": "",
         "image": "/anacroporaTropicana.jpg"
     },
@@ -137,7 +137,7 @@ produits = [
     {
         "id": 16,
         "nom": "Euphyllia Parancora Gold",
-        "prix": 0.00,
+        "prix": 25.00,
         "description": "",
         "image": "/euphylliaParancoraGold.jpg"
     },
@@ -145,7 +145,7 @@ produits = [
     {
         "id": 17,
         "nom": "Euphyllia Parancora Rainbow Hologramme",
-        "prix": 0.00,
+        "prix": 50.00,
         "description": "",
         "image": "/euphylliaParancoraRainbowHologramme.jpg"
     },
@@ -153,7 +153,7 @@ produits = [
     {
         "id": 18,
         "nom": "Montipora Chili Pepper",
-        "prix": 0.00,
+        "prix": 15.00,
         "description": "",
         "image": "/montiporaChiliPepper.jpg"
     },
@@ -161,31 +161,31 @@ produits = [
     {
         "id": 19,
         "nom": "Montipora Grafted",
-        "prix": 0.00,
+        "prix": 20.00,
         "description": "",
         "image": "/montiporaGrafted.jpg"
     },
 
     {
         "id": 20,
-        "nom": "Montipora Hulk",
-        "prix": 0.00,
+        "nom": "Montipora RAH Hulk",
+        "prix": 25.00,
         "description": "",
         "image": "/montiporaHulk.jpg"
     },
 
     {
         "id": 21,
-        "nom": "Montipora Star Wars",
-        "prix": 0.00,
+        "nom": "Montipora MH Star Wars",
+        "prix": 20.00,
         "description": "",
         "image": "/montiporaStarWars.jpg"
     },
 
     {
         "id": 22,
-        "nom": "Montipora Beach Bum",
-        "prix": 0.00,
+        "nom": "Montipora RAH Beach Bum",
+        "prix": 20.00,
         "description": "",
         "image": "/montippraBeachBum.jpg"
     }
