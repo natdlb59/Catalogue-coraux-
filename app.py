@@ -26,10 +26,10 @@ produits = [
     {"nom": "Acropora Pikachu", "image": "acroporaPurpleHaze.png"},
     {"nom": "Acropora Tenuis", "image": "acroporaTenuis.jpg"},
     {"nom": "Acropora MH Wicked Orchid", "image": "acroporaWickedOrchid.jpg"},
-    {"nom": "Acropora MH Little Rainbow", "image": "acroporaMhilittleRainbow.jpg"},
+    {"nom": "Acropora MH Little Rainbow", "image": "acroporaMhlittleRainbow.jpg"},
     {"nom": "Acropora RAH Ghost Town", "image": "acroporaRahGhostTown.jpg"},
     {"nom": "Acropora RAH Purple Haze", "image": "acroporaRahPurpleHaze.jpg"},
-    {"nom": "Acropora RAH Rainbow Mango", "image": "acroporaRahRainbowMango.jpg"},
+    {"nom": "Acropora RAH Rainbow Mango", "image": "acroporaRahRaimbowMango.jpg"},
 
     # ==================== ANACROPORA ====================
     {"nom": "Anacropora JF TNT", "image": "anacropora.jpg"},
