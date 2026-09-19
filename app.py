@@ -26,10 +26,10 @@ produits = [
     {"nom": "Acropora Pikachu", "image": "acroporaPurpleHaze.png"},
     {"nom": "Acropora Tenuis", "image": "acroporaTenuis.jpg"},
     {"nom": "Acropora MH Wicked Orchid", "image": "acroporaWickedOrchid.jpg"},
-    {"nom": "Acropora MH Little Rainbow", "image": "acroporaMhilittleRaimbow.jpeg"},
-    {"nom": "Acropora RAH Ghost Town", "image": "acroporaRahGhostTown.jpeg"},
-    {"nom": "Acropora RAH Purple Haze", "image": "acroporaRahPurpleHaze.jpeg"},
-    {"nom": "Acropora RAH Raimbow Mango", "image": "acroporaRahRaimbowMango.jpeg"},
+    {"nom": "Acropora MH Little Rainbow", "image": "acroporaMhilittleRaimbow.jpg"},
+    {"nom": "Acropora RAH Ghost Town", "image": "acroporaRahGhostTown.jpg"},
+    {"nom": "Acropora RAH Purple Haze", "image": "acroporaRahPurpleHaze.jpg"},
+    {"nom": "Acropora RAH Raimbow Mango", "image": "acroporaRahRaimbowMango.jpg"},
 
     # ==================== ANACROPORA ====================
     {"nom": "Anacropora JF TNT", "image": "anacropora.jpg"},
@@ -68,7 +68,7 @@ produits = [
     # ==================== AUTRES ====================
     {"nom": "Chalice Bugatti", "image": "ChaliceBugatti.jpg"},
     {"nom": "Clavularia Tri Color", "image": "ClavulariaTriColor.jpeg"},
-    {"nom": "Sarcophyton Fidji Vert Long Polypes", "image": "sarcophytonFidjiVertongPolipes.jpeg"},
+    {"nom": "Sarcophyton Fidji Vert Long Polypes", "image": "sarcophytonFidjiVertongPolipes.jpg"},
 ]
 # ============================================================
 # PAGE PRINCIPALE
