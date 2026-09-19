@@ -5,195 +5,73 @@ import os
 # CONFIGURATION
 # ============================================================
 
-# Les photos sont directement à la racine de ton GitHub
+# Les anciennes photos sont à la racine
+# Les nouvelles photos sont dans static/images
 app = Flask(__name__, static_folder=".", static_url_path="")
 
+
 # ============================================================
-# TES 22 CORAUX
+# CATALOGUE DES CORAUX
 # ============================================================
 
 produits = [
+    # ==================== ACROPORA ====================
+    {"nom": "Acropora MH Horrida", "image": "accroporaHorrida.jpg"},
+    {"nom": "Acropora AK Bill Murray", "image": "acroporaBillMurray.jpg"},
+    {"nom": "Acropora RAH Purple Haze", "image": "acroporaGhostTown.jpg"},
+    {"nom": "Acropora RAH Hyacinthus", "image": "acroporaHaycinthus.jpg"},
+    {"nom": "Acropora RAH Merlin'staff", "image": "acroporaMerlin.jpg"},
+    {"nom": "Acropora MicroclaDos Rose", "image": "acroporaMicrocla-DosRose.jpg"},
+    {"nom": "Acropora Nana Tricolor", "image": "acroporaNanaTricolor.jpg"},
+    {"nom": "Acropora Pikachu", "image": "acroporaPurpleHaze.png"},
+    {"nom": "Acropora Tenuis", "image": "acroporaTenuis.jpg"},
+    {"nom": "Acropora MH Wicked Orchid", "image": "acroporaWickedOrchid.jpg"},
+    {"nom": "Acropora MH Little Rainbow", "image": "acroporaMhilittleRainbow.jpg"},
+    {"nom": "Acropora RAH Ghost Town", "image": "acroporaRahGhostTown.jpg"},
+    {"nom": "Acropora RAH Purple Haze", "image": "acroporaRahPurpleHaze.jpg"},
+    {"nom": "Acropora RAH Rainbow Mango", "image": "acroporaRahRainbowMango.jpg"},
 
-    {
-        "id": 1,
-        "nom": "Chalice Bugatti" ,
-        "description": "",
-        "image": "/ChaliceBugatti.jpg"
-    },
+    # ==================== ANACROPORA ====================
+    {"nom": "Anacropora JF TNT", "image": "anacropora.jpg"},
+    {"nom": "Anacropora AK Goldenrod", "image": "anacroporaGoldenrod.jpg"},
+    {"nom": "Anacropora JF Tropicana", "image": "anacroporaTropicana.jpg"},
 
-    {
-        "id": 2,
-        "nom": "Montipora Fire Forest",
-       
-        "description": "",
-        "image": "/MontiporaFireForest.jpg"
-    },
+    # ==================== MONTIPORA ====================
+    {"nom": "Montipora Fire Forest", "image": "MontiporaFireForest.jpg"},
+    {"nom": "Montipora MH Chili Pepper", "image": "montiporaChiliPepper.jpg"},
+    {"nom": "Montipora Grafted", "image": "montiporaGrafted.jpg"},
+    {"nom": "Montipora RAH Hulk", "image": "montiporaHulk.jpg"},
+    {"nom": "Montipora MH Star Wars", "image": "montiporaStarWars.jpg"},
+    {"nom": "Montipora RAH Beach Bum", "image": "montippraBeachBum.jpg"},
 
-    {
-        "id": 3,
-        "nom": "Acropora MH Horrida",
-        
-        "description": "",
-        "image": "/accroporaHorrida.jpg"
-    },
+    # ==================== EUPHYLLIA ====================
+    {"nom": "Euphyllia Parancora Gold", "image": "euphylliaParancoraGold.jpg"},
+    {"nom": "Euphyllia Parancora Raimbow Holograme", "image": "euphylliaParancoraRainbowHologramme.jpg"},
 
-    {
-        "id": 4,
-        "nom": "Acropora AK Bill Murray",
-        "prix": 80.00,
-        "description": "",
-        "image": "/acroporaBillMurray.jpg"
-    },
+    # ==================== ZOANTHUS ====================
+    {"nom": "Zoanthus Armagedon", "image": "zoanthusArmagedon.jpg"},
+    {"nom": "Zoanthus Bam Bam", "image": "zoanthusBambam.jpg"},
+    {"nom": "Zoanthus Captain America", "image": "zoanthusCaptainAmerica.jpg"},
+    {"nom": "Zoanthus Eyes Of RAH", "image": "zoanthusEyesOfRah.jpg"},
+    {"nom": "Zoanthus Fairy Muncher", "image": "zoanthusFairyMuncher.jpg"},
+    {"nom": "Zoanthus Fake Lime Chili", "image": "zoanthusFakeLimeChili.jpg"},
+    {"nom": "Zoanthus Miami Vice", "image": "zoanthusMiamiVice.jpg"},
+    {"nom": "Zoanthus Nirvana", "image": "zoanthusNirvana.jpg"},
+    {"nom": "Zoanthus Oompalo Ompa", "image": "zoanthusOompalo0mpa.jpg"},
+    {"nom": "Zoanthus Red Magician", "image": "zoanthusRedMagician.jpg"},
+    {"nom": "Zoanthus Seduction", "image": "zoanthusSeduction.jpg"},
+    {"nom": "Zoanthus Sonic Flair", "image": "zoanthusSonicFlair.jpg"},
+    {"nom": "Zoanthus Stratosphere", "image": "zoanthusStratosphere.jpg"},
+    {"nom": "Zoanthus Sunyday", "image": "zoanthusSunyday.jpg"},
+    {"nom": "Zoanthus Utter Chaos", "image": "zoanthusUtterChaos.jpg"},
 
-    {
-        "id": 5,
-        "nom": "Acropora RAH Purple Haze",
-       
-        "description": "",
-        "image": "/acroporaGhostTown.jpg"
-    },
-
-    {
-        "id": 6,
-        "nom": "Acropora RAH Hyacinthus",
-       
-        "description": "",
-        "image": "/acroporaHaycinthus.jpg"
-    },
-
-    {
-        "id": 7,
-        "nom": "Acropora RAH Merlin'staff",
-        
-        "description": "",
-        "image": "/acroporaMerlin.jpg"
-    },
-
-    {
-        "id": 8,
-        "nom": "Acropora MicroclaDos Rose",
-        
-        "description": "",
-        "image": "/acroporaMicrocla-DosRose.jpg"
-    },
-
-    {
-        "id": 9,
-        "nom": "Acropora Nana Tricolor",
-        
-        "description": "",
-        "image": "/acroporaNanaTricolor.jpg"
-    },
-
-    {
-        "id": 10,
-        "nom": "Acropora Pikachu",
-        
-        "description": "",
-        "image": "/acroporaPurpleHaze.png"
-    },
-
-    {
-        "id": 11,
-        "nom": "Acropora Tenuis",
-        
-        "description": "",
-        "image": "/acroporaTenuis.jpg"
-    },
-
-    {
-        "id": 12,
-        "nom": "Acropora MH Wicked Orchid",
-      
-        "description": "",
-        "image": "/acroporaWickedOrchid.jpg"
-    },
-
-    {
-        "id": 13,
-        "nom": "Anacropora JF TNT",
-        
-        "description": "",
-        "image": "/anacropora.jpg"
-    },
-
-    {
-        "id": 14,
-        "nom": "Anacropora AK Goldenrod",
-      
-        "description": "",
-        "image": "/anacroporaGoldenrod.jpg"
-    },
-
-    {
-        "id": 15,
-        "nom": "Anacropora JF Tropicana",
-      
-        "description": "",
-        "image": "/anacroporaTropicana.jpg"
-    },
-
-    {
-        "id": 16,
-        "nom": "Euphyllia Parancora Gold",
-        
-        "description": "",
-        "image": "/euphylliaParancoraGold.jpg"
-    },
-
-    {
-        "id": 17,
-        "nom": "Euphyllia Parancora Raimbow Holograme",
-        
-        "description": "",
-        "image": "/euphylliaParancoraRainbowHologramme.jpg"
-    },
-
-    {
-        "id": 18,
-        "nom": "Montipora MH Chili Pepper",
-        
-        "description": "",
-        "image": "/montiporaChiliPepper.jpg"
-    },
-
-    {
-        "id": 19,
-        "nom": "Montipora Grafted",
-        
-        "description": "",
-        "image": "/montiporaGrafted.jpg"
-    },
-
-    {
-        "id": 20,
-        "nom": "Montipora RAH Hulk",
-        
-        "description": "",
-        "image": "/montiporaHulk.jpg"
-    },
-
-    {
-        "id": 21,
-        "nom": "Montipora MH Star Wars",
-        
-        "description": "",
-        "image": "/montiporaStarWars.jpg"
-    },
-
-    {
-        "id": 22,
-        "nom": "Montipora RAH Beach Bum",
-        
-        "description": "",
-        "image": "/montippraBeachBum.jpg"
-    }
-
+    # ==================== AUTRES ====================
+    {"nom": "Chalice Bugatti", "image": "ChaliceBugatti.jpg"},
+    {"nom": "Clavularia Tri Color", "image": "ClavulariaTriColor.jpg"},
+    {"nom": "Sarcophyton Fidji Vert Long Polypes", "image": "sarcophytonFidjiVertongPolipes.jpg"},
 ]
-
-
 # ============================================================
-# DESIGN DU SITE
+# PAGE PRINCIPALE
 # ============================================================
 
 HTML = """
@@ -216,66 +94,45 @@ HTML = """
             box-sizing: border-box;
         }
 
-
-        /* ================================
-           FOND DU SITE
-        ================================= */
-
         body {
-
             margin: 0;
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
 
             background:
-
                 radial-gradient(
-                    circle at 20% 20%,
-                    rgba(0, 190, 220, 0.25),
+                    circle at 15% 20%,
+                    rgba(0, 210, 255, 0.20),
                     transparent 30%
                 ),
 
                 radial-gradient(
-                    circle at 80% 70%,
-                    rgba(0, 120, 180, 0.25),
+                    circle at 85% 70%,
+                    rgba(0, 120, 255, 0.18),
                     transparent 35%
                 ),
 
                 linear-gradient(
                     135deg,
-                    #031b2b,
-                    #063b52,
-                    #02131f
+                    #02131f,
+                    #06384d,
+                    #021923
                 );
 
             min-height: 100vh;
-
         }
 
 
-        /* ================================
-           HEADER
-        ================================= */
+        /* HEADER */
 
         .hero {
-
             text-align: center;
-
-            padding:
-                70px
-                20px
-                60px;
+            padding: 70px 20px 60px;
 
             background:
-
                 linear-gradient(
-                    rgba(0, 30, 45, 0.45),
-                    rgba(0, 20, 35, 0.75)
+                    rgba(0, 30, 45, 0.35),
+                    rgba(0, 15, 30, 0.65)
                 );
 
             border-bottom:
@@ -283,83 +140,29 @@ HTML = """
                 rgba(255,255,255,0.12);
 
             position: relative;
-
             overflow: hidden;
-
-        }
-
-
-        .hero::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 500px;
-            height: 500px;
-
-            background:
-                rgba(0, 210, 255, 0.10);
-
-            border-radius: 50%;
-
-            top: -300px;
-            left: -100px;
-
-            filter: blur(20px);
-
-        }
-
-
-        .hero::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 400px;
-            height: 400px;
-
-            background:
-                rgba(0, 120, 255, 0.10);
-
-            border-radius: 50%;
-
-            bottom: -250px;
-            right: -100px;
-
-            filter: blur(20px);
-
         }
 
 
         .hero-content {
-
             position: relative;
-
             z-index: 2;
-
             max-width: 900px;
-
             margin: auto;
-
         }
 
 
         .coral-icon {
-
-            font-size: 48px;
-
+            font-size: 52px;
             margin-bottom: 15px;
-
         }
 
 
         .hero h1 {
-
             margin: 0;
 
-            font-size: clamp(42px, 7vw, 76px);
+            font-size:
+                clamp(42px, 7vw, 76px);
 
             font-weight: 800;
 
@@ -369,81 +172,56 @@ HTML = """
                 linear-gradient(
                     90deg,
                     #ffffff,
-                    #71e5ff,
+                    #6ee7ff,
                     #ffffff
                 );
 
             -webkit-background-clip: text;
-
             -webkit-text-fill-color: transparent;
-
         }
 
 
         .hero p {
-
             margin-top: 18px;
 
             font-size: 20px;
 
             color: #c9edf5;
-
-            letter-spacing: 0.5px;
-
         }
 
 
-        /* ================================
-           CONTENU
-        ================================= */
+        /* CONTENU */
 
         .container {
-
             max-width: 1250px;
-
             margin: auto;
 
             padding:
-                50px
-                20px
-                80px;
-
+                50px 20px 80px;
         }
 
 
         .section-title {
-
             text-align: center;
-
             margin-bottom: 40px;
-
         }
 
 
         .section-title h2 {
-
             font-size: 32px;
-
             margin: 0;
-
         }
 
 
         .section-title p {
-
             color: #a8d4df;
-
             margin-top: 10px;
-
         }
 
 
-        /* ================================
-           GRILLE
-        ================================= */
+        /* GRILLE */
 
         .grid {
-
             display: grid;
 
             grid-template-columns:
@@ -453,16 +231,12 @@ HTML = """
                 );
 
             gap: 28px;
-
         }
 
 
-        /* ================================
-           CARTE
-        ================================= */
+        /* CARTE */
 
         .card {
-
             background:
                 rgba(255,255,255,0.075);
 
@@ -483,43 +257,31 @@ HTML = """
             transition:
                 transform 0.25s ease,
                 box-shadow 0.25s ease;
-
         }
 
 
         .card:hover {
-
             transform:
                 translateY(-8px);
 
             box-shadow:
                 0 25px 55px
-                rgba(0,0,0,0.4);
-
+                rgba(0,0,0,0.40);
         }
 
 
-        /* ================================
-           IMAGE
-        ================================= */
+        /* IMAGE */
 
         .image-container {
-
             width: 100%;
-
             height: 270px;
-
             overflow: hidden;
-
             background: #061b27;
-
         }
 
 
         .image-container img {
-
             width: 100%;
-
             height: 100%;
 
             object-fit: cover;
@@ -528,85 +290,51 @@ HTML = """
 
             transition:
                 transform 0.4s ease;
-
         }
 
 
         .card:hover
         .image-container img {
-
-            transform: scale(1.06);
-
+            transform:
+                scale(1.06);
         }
 
 
-        /* ================================
-           INFOS
-        ================================= */
+        /* INFORMATIONS */
 
         .card-content {
-
             padding: 22px;
-
         }
 
 
         .card h3 {
-
-            margin:
-                0
-                0
-                12px;
-
-            font-size: 22px;
-
+            margin: 0;
+            font-size: 21px;
             color: #ffffff;
-
         }
 
 
         .description {
-
-            min-height: 20px;
-
+            margin-top: 10px;
             color: #a9cbd4;
-
             font-size: 14px;
-
         }
 
 
         .bottom {
-
             display: flex;
-
-            justify-content: space-between;
-
+            justify-content: flex-end;
             align-items: center;
 
-            margin-top: 22px;
-
-        }
-
-
-        .price {
-
-            font-size: 21px;
-
-            font-weight: bold;
-
-            color: #65e6ff;
-
+            margin-top: 20px;
         }
 
 
         .button {
-
             display: inline-block;
 
             padding:
-                10px
-                16px;
+                10px 18px;
 
             border-radius: 10px;
 
@@ -628,29 +356,24 @@ HTML = """
             transition:
                 transform 0.2s ease,
                 opacity 0.2s ease;
-
         }
 
 
         .button:hover {
-
             transform:
                 translateY(-2px);
 
             opacity: 0.9;
-
         }
 
 
-        /* ================================
-           FOOTER
-        ================================= */
+        /* FOOTER */
 
         footer {
-
             text-align: center;
 
-            padding: 30px 20px;
+            padding:
+                30px 20px;
 
             color: #8eb8c4;
 
@@ -659,58 +382,38 @@ HTML = """
                 rgba(255,255,255,0.08);
 
             font-size: 14px;
-
         }
 
 
-        /* ================================
-           MOBILE
-        ================================= */
+        /* TELEPHONE */
 
-        @media
-        (max-width: 600px) {
+        @media (max-width: 600px) {
 
             .hero {
-
                 padding:
-                    55px
-                    15px
-                    45px;
-
+                    55px 15px 45px;
             }
 
             .hero h1 {
-
                 letter-spacing:
                     -1px;
-
             }
 
             .hero p {
-
                 font-size: 16px;
-
             }
 
             .container {
-
                 padding:
-                    35px
-                    15px
-                    60px;
-
+                    35px 15px 60px;
             }
 
             .grid {
-
                 gap: 20px;
-
             }
 
             .image-container {
-
                 height: 250px;
-
             }
 
         }
@@ -723,9 +426,9 @@ HTML = """
 <body>
 
 
-    <!-- ================================
+    <!-- ======================================================
          HEADER
-    ================================= -->
+    ======================================================= -->
 
     <header class="hero">
 
@@ -748,9 +451,9 @@ HTML = """
     </header>
 
 
-    <!-- ================================
-         PRODUITS
-    ================================= -->
+    <!-- ======================================================
+         CATALOGUE
+    ======================================================= -->
 
     <main class="container">
 
@@ -761,7 +464,7 @@ HTML = """
             </h2>
 
             <p>
-                Explorez notre catalogue
+                Découvrez notre collection
             </p>
 
         </div>
@@ -778,7 +481,6 @@ HTML = """
                     <img
                         src="{{ produit.image }}"
                         alt="{{ produit.nom }}"
-                        onerror="this.style.display='none';"
                     >
 
                 </div>
@@ -802,18 +504,11 @@ HTML = """
 
                     <div class="bottom">
 
-                        <div class="price">
-
-                            {{ "%.2f"|format(produit.prix) }} €
-
-                        </div>
-
-
                         <a
                             class="button"
                             href="/produit/{{ produit.id }}"
                         >
-                            Voir
+                            Voir le corail
                         </a>
 
                     </div>
@@ -829,9 +524,9 @@ HTML = """
     </main>
 
 
-    <!-- ================================
+    <!-- ======================================================
          FOOTER
-    ================================= -->
+    ======================================================= -->
 
     <footer>
 
@@ -860,7 +555,7 @@ def accueil():
 
 
 # ============================================================
-# PAGE D'UN CORAIL
+# PAGE DETAIL D'UN CORAIL
 # ============================================================
 
 @app.route("/produit/<int:produit_id>")
@@ -876,6 +571,7 @@ def produit_detail(produit_id):
 
     if produit is None:
         abort(404)
+
 
     HTML_DETAIL = """
     <!DOCTYPE html>
@@ -901,45 +597,52 @@ def produit_detail(produit_id):
 
                 margin: 0;
 
-                font-family: Arial, sans-serif;
+                font-family:
+                    Arial,
+                    sans-serif;
 
                 color: white;
 
                 background:
                     linear-gradient(
                         135deg,
-                        #031b2b,
-                        #063b52,
-                        #02131f
+                        #02131f,
+                        #06384d,
+                        #021923
                     );
 
                 min-height: 100vh;
 
-                padding: 30px 20px;
-
+                padding:
+                    30px 20px;
             }
+
 
             .page {
 
                 max-width: 900px;
 
                 margin: auto;
-
             }
+
 
             .back {
 
                 display: inline-block;
 
-                margin-bottom: 25px;
+                margin-bottom:
+                    25px;
 
-                color: #8feaff;
+                color:
+                    #8feaff;
 
-                text-decoration: none;
+                text-decoration:
+                    none;
 
-                font-weight: bold;
-
+                font-weight:
+                    bold;
             }
+
 
             .card {
 
@@ -950,59 +653,66 @@ def produit_detail(produit_id):
                     1px solid
                     rgba(255,255,255,0.15);
 
-                border-radius: 25px;
+                border-radius:
+                    25px;
 
-                overflow: hidden;
+                overflow:
+                    hidden;
 
-                backdrop-filter: blur(12px);
+                backdrop-filter:
+                    blur(12px);
 
                 box-shadow:
                     0 20px 60px
                     rgba(0,0,0,0.35);
-
             }
+
 
             .image {
 
                 width: 100%;
 
-                max-height: 600px;
+                max-height:
+                    600px;
 
-                object-fit: cover;
+                object-fit:
+                    cover;
 
-                display: block;
-
+                display:
+                    block;
             }
+
 
             .content {
 
-                padding: 30px;
-
+                padding:
+                    30px;
             }
+
 
             h1 {
 
-                margin-top: 0;
+                margin-top:
+                    0;
 
-                font-size: 38px;
-
+                font-size:
+                    38px;
             }
 
-            .price {
 
-                color: #65e6ff;
+            .description {
 
-                font-size: 28px;
+                color:
+                    #b8dbe4;
 
-                font-weight: bold;
-
-                margin-top: 20px;
-
+                line-height:
+                    1.6;
             }
 
         </style>
 
     </head>
+
 
     <body>
 
@@ -1015,6 +725,7 @@ def produit_detail(produit_id):
                 ← Retour au catalogue
             </a>
 
+
             <div class="card">
 
                 <img
@@ -1023,25 +734,21 @@ def produit_detail(produit_id):
                     alt="{{ produit.nom }}"
                 >
 
+
                 <div class="content">
 
                     <h1>
                         {{ produit.nom }}
                     </h1>
 
+
                     {% if produit.description %}
 
-                    <p>
+                    <p class="description">
                         {{ produit.description }}
                     </p>
 
                     {% endif %}
-
-                    <div class="price">
-
-                        {{ "%.2f"|format(produit.prix) }} €
-
-                    </div>
 
                 </div>
 
@@ -1054,6 +761,7 @@ def produit_detail(produit_id):
     </html>
     """
 
+
     return render_template_string(
         HTML_DETAIL,
         produit=produit
@@ -1061,7 +769,7 @@ def produit_detail(produit_id):
 
 
 # ============================================================
-# LANCEMENT LOCAL
+# LANCEMENT
 # ============================================================
 
 if __name__ == "__main__":
