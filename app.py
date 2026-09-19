@@ -20,33 +20,29 @@ PUBLIC_URL = "https://TON-SITE.onrender.com"
 # ==========================================================
 
 produits = [
-
-    {
-        "id": 1,
-        "nom": "Produit 1",
-        "prix": 5.00,
-        "description": "Description du produit 1.",
-        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1000"
-    },
-
-    {
-        "id": 2,
-        "nom": "Produit 2",
-        "prix": 8.50,
-        "description": "Description du produit 2.",
-        "image": "https://images.unsplash.com/photo-1503602642458-232111445657?w=1000"
-    },
-
-    {
-        "id": 3,
-        "nom": "Produit 3",
-        "prix": 12.00,
-        "description": "Description du produit 3.",
-        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000"
-    }
-
+    {"id": 1, "nom": "Chalice Bugatti", "prix": 0.00, "description": "", "image": "/static/ChaliceBugatti.jpg"},
+    {"id": 2, "nom": "Montipora Fire Forest", "prix": 0.00, "description": "", "image": "/static/MontiporaFireForest.jpg"},
+    {"id": 3, "nom": "Acropora Horrida", "prix": 0.00, "description": "", "image": "/static/acroporaHorrida.jpg"},
+    {"id": 4, "nom": "Acropora Bill Murray", "prix": 0.00, "description": "", "image": "/static/acroporaBillMurray.jpg"},
+    {"id": 5, "nom": "Acropora Ghost Town", "prix": 0.00, "description": "", "image": "/static/acroporaGhostTown.jpg"},
+    {"id": 6, "nom": "Acropora Hacinthus", "prix": 0.00, "description": "", "image": "/static/acroporaHacinthus.jpg"},
+    {"id": 7, "nom": "Acropora Merlin", "prix": 0.00, "description": "", "image": "/static/acroporaMerlin.jpg"},
+    {"id": 8, "nom": "Acropora Microcla-Dos Rose", "prix": 0.00, "description": "", "image": "/static/acroporaMicrocla-DosRose.jpg"},
+    {"id": 9, "nom": "Acropora Nana Tricolor", "prix": 0.00, "description": "", "image": "/static/acroporaNanaTricolor.jpg"},
+    {"id": 10, "nom": "Acropora Purple Haze", "prix": 0.00, "description": "", "image": "/static/acroporaPurpleHaze.png"},
+    {"id": 11, "nom": "Acropora Tenuis", "prix": 0.00, "description": "", "image": "/static/acroporaTenuis.jpg"},
+    {"id": 12, "nom": "Acropora Wicked Orchid", "prix": 0.00, "description": "", "image": "/static/acroporaWickedOrchid.jpg"},
+    {"id": 13, "nom": "Anacropora", "prix": 0.00, "description": "", "image": "/static/anacropora.jpg"},
+    {"id": 14, "nom": "Anacropora Goldenrod", "prix": 0.00, "description": "", "image": "/static/anacroporaGoldenrod.jpg"},
+    {"id": 15, "nom": "Anacropora Tropicana", "prix": 0.00, "description": "", "image": "/static/anacroporaTropicana.jpg"},
+    {"id": 16, "nom": "Euphyllia Parancora Gold", "prix": 0.00, "description": "", "image": "/static/euphylliaParancoraGold.jpg"},
+    {"id": 17, "nom": "Euphyllia Parancora Rainbow Hologramme", "prix": 0.00, "description": "", "image": "/static/euphylliaParancoraRainbowHologramme.jpg"},
+    {"id": 18, "nom": "Montipora Chili Pepper", "prix": 0.00, "description": "", "image": "/static/montiporaChiliPepper.jpg"},
+    {"id": 19, "nom": "Montipora Grafted", "prix": 0.00, "description": "", "image": "/static/montiporaGrafted.jpg"},
+    {"id": 20, "nom": "Montipora Hulk", "prix": 0.00, "description": "", "image": "/static/montiporaHulk.jpg"},
+    {"id": 21, "nom": "Montipora Star Wars", "prix": 0.00, "description": "", "image": "/static/montiporaStarWars.jpg"},
+    {"id": 22, "nom": "Montipora Beach Bum", "prix": 0.00, "description": "", "image": "/static/montippraBeachBum.jpg"}
 ]
-
 
 # ==========================================================
 # PAGE PRINCIPALE
