@@ -17,7 +17,7 @@ produits = [
     {
         "id": 1,
         "nom": "Chalice Bugatti",
-        "prix": 60 à 120,
+        "prix": 60_120,
         "description": "",
         "image": "/ChaliceBugatti.jpg"
     },
