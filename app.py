@@ -71,6 +71,26 @@ produits = [
 
 
 # ============================================================
+# TROUVER AUTOMATIQUEMENT LES IMAGES
+# ============================================================
+
+def chemin_image(nom_fichier):
+
+    # Cherche d'abord à la racine
+    if os.path.exists(nom_fichier):
+        return "/" + nom_fichier
+
+    # Puis dans static/images
+    if os.path.exists(
+        os.path.join("static", "images", nom_fichier)
+    ):
+        return "/static/images/" + nom_fichier
+
+    # Si le fichier n'est trouvé nulle part
+    return "/" + nom_fichier
+
+
+# ============================================================
 # PAGE PRINCIPALE
 # ============================================================
 
@@ -122,8 +142,6 @@ HTML = """
             min-height: 100vh;
         }
 
-
-        /* HEADER */
 
         .hero {
             text-align: center;
@@ -190,8 +208,6 @@ HTML = """
         }
 
 
-        /* CONTENU */
-
         .container {
             max-width: 1250px;
             margin: auto;
@@ -219,8 +235,6 @@ HTML = """
         }
 
 
-        /* GRILLE */
-
         .grid {
             display: grid;
 
@@ -233,8 +247,6 @@ HTML = """
             gap: 28px;
         }
 
-
-        /* CARTE */
 
         .card {
             background:
@@ -270,8 +282,6 @@ HTML = """
         }
 
 
-        /* IMAGE */
-
         .image-container {
             width: 100%;
             height: 270px;
@@ -299,8 +309,6 @@ HTML = """
                 scale(1.06);
         }
 
-
-        /* INFORMATIONS */
 
         .card-content {
             padding: 22px;
@@ -367,8 +375,6 @@ HTML = """
         }
 
 
-        /* FOOTER */
-
         footer {
             text-align: center;
 
@@ -384,8 +390,6 @@ HTML = """
             font-size: 14px;
         }
 
-
-        /* TELEPHONE */
 
         @media (max-width: 600px) {
 
@@ -426,107 +430,101 @@ HTML = """
 <body>
 
 
-    <!-- HEADER -->
+<header class="hero">
 
-    <header class="hero">
+    <div class="hero-content">
 
-        <div class="hero-content">
+        <div class="coral-icon">
+            🪸
+        </div>
 
-            <div class="coral-icon">
-                🪸
+        <h1>
+            Catalogue de Coraux
+        </h1>
+
+        <p>
+            Découvrez notre sélection de coraux
+        </p>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <div class="section-title">
+
+        <h2>
+            Nos coraux
+        </h2>
+
+        <p>
+            Découvrez notre collection
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        {% for produit in produits %}
+
+        <div class="card">
+
+            <div class="image-container">
+
+                <img
+                    src="{{ chemin_image(produit.image) }}"
+                    alt="{{ produit.nom }}"
+                >
+
             </div>
 
-            <h1>
-                Catalogue de Coraux
-            </h1>
 
-            <p>
-                Découvrez notre sélection de coraux
-            </p>
+            <div class="card-content">
 
-        </div>
-
-    </header>
+                <h3>
+                    {{ produit.nom }}
+                </h3>
 
 
-    <!-- CATALOGUE -->
+                {% if produit.description %}
 
-    <main class="container">
+                <div class="description">
+                    {{ produit.description }}
+                </div>
 
-        <div class="section-title">
-
-            <h2>
-                Nos coraux
-            </h2>
-
-            <p>
-                Découvrez notre collection
-            </p>
-
-        </div>
+                {% endif %}
 
 
-        <div class="grid">
+                <div class="bottom">
 
-            {% for produit in produits %}
-
-            <div class="card">
-
-                <div class="image-container">
-
-                    <img
-                        src="{{ produit.image }}"
-                        alt="{{ produit.nom }}"
+                    <a
+                        class="button"
+                        href="/produit/{{ loop.index0 }}"
                     >
-
-                </div>
-
-
-                <div class="card-content">
-
-                    <h3>
-                        {{ produit.nom }}
-                    </h3>
-
-
-                    {% if produit.description %}
-
-                    <div class="description">
-                        {{ produit.description }}
-                    </div>
-
-                    {% endif %}
-
-
-                    <div class="bottom">
-
-                        <a
-                            class="button"
-                            href="/produit/{{ loop.index0 }}"
-                        >
-                            Voir le corail
-                        </a>
-
-                    </div>
+                        Voir le corail
+                    </a>
 
                 </div>
 
             </div>
 
-            {% endfor %}
-
         </div>
 
-    </main>
+        {% endfor %}
+
+    </div>
+
+</main>
 
 
-    <!-- FOOTER -->
+<footer>
 
-    <footer>
+    Catalogue de Coraux
 
-        Catalogue de Coraux
-
-    </footer>
+</footer>
 
 
 </body>
@@ -536,7 +534,7 @@ HTML = """
 
 
 # ============================================================
-# PAGE PRINCIPALE
+# ACCUEIL
 # ============================================================
 
 @app.route("/")
@@ -544,22 +542,21 @@ def accueil():
 
     return render_template_string(
         HTML,
-        produits=produits
+        produits=produits,
+        chemin_image=chemin_image
     )
 
 
 # ============================================================
-# PAGE DETAIL D'UN CORAIL
+# PAGE DETAIL
 # ============================================================
 
 @app.route("/produit/<int:produit_id>")
 def produit_detail(produit_id):
 
-    # Vérifie que le numéro correspond à un corail
     if produit_id < 0 or produit_id >= len(produits):
         abort(404)
 
-    # Récupère le corail correspondant à sa position
     produit = produits[produit_id]
 
 
@@ -719,7 +716,7 @@ def produit_detail(produit_id):
             <div class="card">
 
                 <img
-                    src="{{ produit.image }}"
+                    src="{{ chemin_image(produit.image) }}"
                     class="image"
                     alt="{{ produit.nom }}"
                 >
@@ -754,7 +751,8 @@ def produit_detail(produit_id):
 
     return render_template_string(
         HTML_DETAIL,
-        produit=produit
+        produit=produit,
+        chemin_image=chemin_image
     )
 
 
