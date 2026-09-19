@@ -29,7 +29,7 @@ produits = [
     {"nom": "Acropora MH Little Rainbow", "image": "acroporaMhlittleRainbow.jpg"},
     {"nom": "Acropora RAH Ghost Town", "image": "acroporaRahGhostTown.jpg"},
     {"nom": "Acropora RAH Purple Haze", "image": "acroporaRahPurpleHaze.jpg"},
-    {"nom": "Acropora RAH Rainbow Mango", "image": "acroporaRahRaimbowMango.jpg"},
+    {"nom": "Acropora RAH Raimbow Mango", "image": "acroporaRahRaimbowMango.jpg"},
 
     # ==================== ANACROPORA ====================
     {"nom": "Anacropora JF TNT", "image": "anacropora.jpg"},
