@@ -5,8 +5,6 @@ import os
 # CONFIGURATION
 # ============================================================
 
-# Les anciennes photos sont à la racine
-# Les nouvelles photos sont dans static/images
 app = Flask(__name__, static_folder=".", static_url_path="")
 
 
@@ -70,6 +68,8 @@ produits = [
     {"nom": "Clavularia Tri Color", "image": "ClavulariaTriColor.jpeg"},
     {"nom": "Sarcophyton Fidji Vert Long Polypes", "image": "sarcophytonFidjiVertongPolipes.jpg"},
 ]
+
+
 # ============================================================
 # PAGE PRINCIPALE
 # ============================================================
@@ -426,9 +426,7 @@ HTML = """
 <body>
 
 
-    <!-- ======================================================
-         HEADER
-    ======================================================= -->
+    <!-- HEADER -->
 
     <header class="hero">
 
@@ -451,9 +449,7 @@ HTML = """
     </header>
 
 
-    <!-- ======================================================
-         CATALOGUE
-    ======================================================= -->
+    <!-- CATALOGUE -->
 
     <main class="container">
 
@@ -506,7 +502,7 @@ HTML = """
 
                         <a
                             class="button"
-                            href="/produit/{{ produit.id }}"
+                            href="/produit/{{ loop.index0 }}"
                         >
                             Voir le corail
                         </a>
@@ -524,9 +520,7 @@ HTML = """
     </main>
 
 
-    <!-- ======================================================
-         FOOTER
-    ======================================================= -->
+    <!-- FOOTER -->
 
     <footer>
 
@@ -561,16 +555,12 @@ def accueil():
 @app.route("/produit/<int:produit_id>")
 def produit_detail(produit_id):
 
-    produit = next(
-        (
-            p for p in produits
-            if p["id"] == produit_id
-        ),
-        None
-    )
-
-    if produit is None:
+    # Vérifie que le numéro correspond à un corail
+    if produit_id < 0 or produit_id >= len(produits):
         abort(404)
+
+    # Récupère le corail correspondant à sa position
+    produit = produits[produit_id]
 
 
     HTML_DETAIL = """
