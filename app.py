@@ -35,7 +35,7 @@ produits = [
         "nom": "Acropora Horrida",
         "prix": 0.00,
         "description": "",
-        "image": "/acroporaHorrida.jpg"
+        "image": "/accroporaHorrida.jpg"
     },
 
     {
@@ -59,7 +59,7 @@ produits = [
         "nom": "Acropora Hacinthus",
         "prix": 0.00,
         "description": "",
-        "image": "/acroporaHacinthus.jpg"
+        "image": "/acroporaHaycinthus.jpg"
     },
 
     {
